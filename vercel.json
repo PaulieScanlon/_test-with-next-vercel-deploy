@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "next.config.js", "use": "@vercel/next" },
+    {
+      "src": ".mastra/output/index.mjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [".mastra/output/**"]
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/mastra/(.*)", "dest": ".mastra/output/index.mjs" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
