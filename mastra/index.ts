@@ -1,7 +1,6 @@
 import { Mastra } from "@mastra/core/mastra";
 import { PinoLogger } from "@mastra/loggers";
 import { LibSQLStore } from "@mastra/libsql";
-import { VercelDeployer } from "@mastra/deployer-vercel";
 
 import { weatherAgent } from "./agents/weather-agent";
 
@@ -14,10 +13,5 @@ export const mastra = new Mastra({
   logger: new PinoLogger({
     name: "Mastra",
     level: "info"
-  }),
-  deployer: new VercelDeployer({
-    teamSlug: "paulie-scanlons-projects",
-    projectName: "test-with-next-vercel-deploy",
-    token: "zNrh9r6fWELjUqQdIQ5DwMck"
   })
 });
