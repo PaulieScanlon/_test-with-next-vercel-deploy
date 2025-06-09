@@ -2,28 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": ".mastra/output/index.mjs",
-      "use": "@vercel/node",
+      "src": "next.config.js",
+      "use": "@vercel/next",
       "config": {
-        "includeFiles": [
-          ".mastra/output/index.mjs",
-          ".mastra/output/instrumentation.mjs",
-          ".mastra/output/mastra.mjs",
-          ".mastra/output/package-lock.json",
-          ".mastra/output/package.json",
-          ".mastra/output/telemetry-config.mjs",
-          ".mastra/output/tools",
-          ".mastra/output/tools.mjs",
-          ".mastra/output/tools/6b8a443a-f707-4f74-bc49-7e04832f1a1e.mjs"
-        ]
+        "includeFiles": [".mastra/**"]
       }
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": ".mastra/output/index.mjs"
-    }
-  ],
-  "installCommand": "npm install --omit=dev"
+  ]
 }
