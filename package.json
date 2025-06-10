@@ -10,7 +10,7 @@
     "dev:mastra": "mastra dev --dir mastra",
     "build:mastra": "mastra build --dir mastra",
     "dev": "npm run dev:next & npm run dev:mastra",
-    "build": "npm run build:next && npm run build:mastra"
+    "build": "npm run build:next"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
